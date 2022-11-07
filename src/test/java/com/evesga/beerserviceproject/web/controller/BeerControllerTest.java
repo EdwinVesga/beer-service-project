@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -36,6 +37,7 @@ class BeerControllerTest {
                 .id(null)
                 .beerName("Galaxy")
                 .beerStyle("testName")
+                .price(BigDecimal.ONE)
                 .upc(1l)
                 .build();
 
@@ -53,6 +55,7 @@ class BeerControllerTest {
                 .id(null)
                 .beerName("Galaxy")
                 .beerStyle("testName")
+                .price(BigDecimal.ONE)
                 .upc(1l)
                 .build();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
